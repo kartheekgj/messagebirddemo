@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This page is created for Paypal for checkout demo - Server Side">
+    <meta name="author" content="Jayendra Kartheek">
+
+    <title>MessageBird - Donations</title>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/sticky-footer-navbar.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height:50px" role="navigation">
+            <a class="nav navbar-nav navbar-left" href="javascript:;"><img
+                    src="https://theme.zdassets.com/theme_assets/522165/78dbcc039c104ca92de746b17b9b65db6c1d3070.svg"
+                    width="250px" alt="PayPal" height="25px;" /></a>
+            <h5 class="nav navbar-nav navbar-center">Message Bird</h5>
+        </nav>
+    </header>
+    <!-- Begin page content -->
+    <main role="main" class="mt-4" id="mainContainer">
+        <section class="p-5 ml-5">
+            <h3 class="text-muted">Accepting donations to support one of their 3 initiatives: Marine Life, Earth Life,
+                Air Life</h3>
+            <ul class="list-group">
+                <li>
+                    Anyone can reach out to one of the channels to start a donation
+                </li>
+                <li>
+                    Chatbot asks a handful of questions to validate and classify the donation
+                </li>
+                <li>
+                    Chatbot presents a payment link to the user
+                </li>
+                <li>
+                    Upon the success of the payment, all the information gathered should be registered in our BI tool
+                </li>
+                <li>
+                    Reporting Worldwide of Animals in Danger and Animal Abuse.
+                </li>
+            </ul>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer_container">
+            <span class="text-muted">Developed by Jayendra Kartheek</span>
+        </div>
+    </footer>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        var MessageBirdChatWidgetSettings = {
+            widgetId: '83dacdca-ee34-4d9a-9f4d-cc43284c0509',
+            initializeOnLoad: true,
+        };
+        ! function () {
+            "use strict";
+            if (Boolean(document.getElementById("live-chat-widget-script"))) console.error(
+                "MessageBirdChatWidget: Snippet loaded twice on page");
+            else {
+                var e, t;
+                window.MessageBirdChatWidget = {}, window.MessageBirdChatWidget.queue = [];
+                for (var i = ["init", "setConfig", "toggleChat", "identify", "hide", "on", "shutdown"], n =
+                        function () {
+                            var e = i[d];
+                            window.MessageBirdChatWidget[e] = function () {
+                                for (var t = arguments.length, i = new Array(t), n = 0; n < t; n++) i[n] =
+                                    arguments[
+                                        n];
+                                window.MessageBirdChatWidget.queue.push([
+                                    [e, i]
+                                ])
+                            }
+                        }, d = 0; d < i.length; d++) n();
+                var a = (null === (e = window) || void 0 === e || null === (t = e.MessageBirdChatWidgetSettings) ||
+                        void 0 === t ? void 0 : t.widgetId) || "",
+                    o = function () {
+                        var e, t = document.createElement("script");
+                        t.type = "text/javascript", t.src = "https://livechat.messagebird.com/bootstrap.js?widgetId="
+                            .concat(a), t.async = !0, t.id = "live-chat-widget-script";
+                        var i = document.getElementsByTagName("script")[0];
+                        null == i || null === (e = i.parentNode) || void 0 === e || e.insertBefore(t, i)
+                    };
+                "complete" === document.readyState ? o() : window.attachEvent ? window.attachEvent("onload", o) : window
+                    .addEventListener("load", o, !1)
+            }
+        }();
+    </script>
+</body>
+
+</html>
